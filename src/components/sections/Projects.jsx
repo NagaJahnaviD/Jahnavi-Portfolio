@@ -5,12 +5,36 @@ export const Projects = () => {
     const [showAll, setShowAll] = useState(false);
 
     const allProjects = [
-        {
+  {
+    title: "PeaceOfPaper",
+    description:
+      "A secure digital journaling platform built with the MERN stack and Tailwind CSS. Implements encryption and sentiment analysis (Vader NLP) to protect user privacy while offering mood insights. Features Clerk-based authentication and a sleek, responsive interface.",
+    tech: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Clerk", "CryptoJS", "Vader NLP"],
+    link: "https://github.com/NagaJahnaviD/PeaceOfPaper"
+  },
+  {
+  title: "NaatyaVerse",
+  description:
+    "AI-powered prototype that brings computer vision to Indian classical dance training. Uses OpenCV and MediaPipe for real-time pose estimation to compare a dancer’s movements with reference poses and give instant feedback on posture and alignment. Designed to help Bharatanatyam learners refine technique and preserve cultural heritage through technology.",
+  tech: ["Python", "OpenCV", "MediaPipe", "Streamlit (prototype UI)"],
+  link: "https://github.com/NagaJahnaviD/NaatyaVerse"
+}
+,
+  {
     title: "Chat Hive",
-    description: "A real-time personal chat application that allows users to exchange live messages with a sleek and interactive UI. Integrated Socket.IO for instant communication, Clerk for seamless user authentication, and VantaJS for visually appealing animated backgrounds. This project demonstrates efficient use of WebSocket technology and modern frontend design.",
-    tech: ["JavaScript", "React", "VantaJS", "HTML", "SocketIO", "Clerk"],
+    description:
+      "A full-stack real-time messaging platform supporting one-to-one conversations and friend management. Built with React, Node.js, and MongoDB, and powered by Socket.IO for low-latency communication. Includes Clerk authentication and a responsive UI for seamless use across devices.",
+    tech: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Socket.IO", "Clerk"],
     link: "https://github.com/NagaJahnaviD/ChatHive"
-},
+  },
+  {
+    title: "WildSightAI",
+    description:
+      "Computer-vision–driven wildlife detection and monitoring system. Utilizes deep learning models to identify animal species in camera-trap images and provide real-time alerts. Designed for conservation projects and scalable cloud deployment.",
+    tech: ["Python", "TensorFlow", "OpenCV", "Flask", "MongoDB"],
+    link: "https://github.com/NagaJahnaviD/WildSightAI"
+  },
+
 {
     title: "Personal Portfolio",
     description: "Crafted a fully responsive and aesthetically pleasing portfolio website to showcase projects, technical skills, and professional experience. Integrated EmailJS for contact functionality and used TailwindCSS for streamlined styling. Designed to offer a smooth navigation experience and modern visual appeal.",
