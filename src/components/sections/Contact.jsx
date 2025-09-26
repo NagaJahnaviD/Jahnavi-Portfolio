@@ -107,7 +107,7 @@ export const Contact = () => {
     <p className="font-bold text-lg">Connect:</p>
     <div className="flex items-center space-x-6 mt-2 text-4xl">
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/in/naga-jahnavi-dannayak-892b16286/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-blue-400 hover:text-blue-500 transition"
@@ -115,7 +115,7 @@ export const Contact = () => {
         <FaLinkedin />
       </a>
       <a
-        href="https://github.com"
+        href="https://github.com/NagaJahnaviD"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-100 hover:text-white transition"
