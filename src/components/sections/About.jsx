@@ -1,4 +1,25 @@
 import {RevealOnScroll} from '../RevealOnScroll'
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaPython,
+  FaJava,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiMysql,
+  SiExpress,
+  SiPostman,
+  SiSocketdotio,
+} from "react-icons/si";
+
 export const About =()=>{
 
     const frontendSkills=["ReactJS","JavaScript","TailwindCSS","Bootstrap","HTML"];
@@ -9,19 +30,36 @@ export const About =()=>{
     const softSkills=["Public Speaking","Leadership","Teamwork","Adaptability","Problem-Solving",];
     
 
-
+  // All skills for marquee
+  const allSkills = [
+    { name: "ReactJS", icon: <FaReact /> },
+    { name: "JavaScript", icon: <FaJsSquare /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss /> },
+    { name: "Bootstrap", icon: <FaCss3Alt /> },
+    { name: "HTML", icon: <FaHtml5 /> },
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "SQL", icon: <SiMysql /> },
+    { name: "Express.js", icon: <SiExpress /> },
+    { name: "REST API", icon: <SiPostman /> },
+    { name: "SocketIO", icon: <SiSocketdotio /> },
+    { name: "Git", icon: <FaGitAlt /> },
+    { name: "Github", icon: <FaGithub /> },
+  ];
+  const loopSkills = [...allSkills, ...allSkills];
     return <section id="about" 
     className="min-h-screen flex items-center justify-center py-20">
         <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">About Me</h2>
+        <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">About Me</h2>
 
             <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
                 <p className="text-gray-300 mb-6">
                 I’m a third-year Computer Science student at VNR VJIET who loves all things AI, web development, and emerging tech. You’ll usually find me at a hackathon, building side projects, or diving into an internship challenge just to see what I can create next. I’m all about learning from smart people, experimenting with new ideas, and using technology to make a real impact. Always curious, always ready for the next big challenge!</p>
 
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all">
+                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
                         <h3 className="text-xl font-bold mb-4">Frontend</h3>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -34,7 +72,7 @@ export const About =()=>{
 
                     </div>
 
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all">
+                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
                         <h3 className="text-xl font-bold mb-4">Backend</h3>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -46,7 +84,7 @@ export const About =()=>{
                         </div>
 
                     </div>
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all">
+                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
                         <h3 className="text-xl font-bold mb-4">Tools</h3>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -58,7 +96,7 @@ export const About =()=>{
                         </div>
 
                     </div>
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all">
+                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
                         <h3 className="text-xl font-bold mb-4">Languages</h3>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -71,7 +109,7 @@ export const About =()=>{
 
                     </div>
 
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all">
+                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
                         <h3 className="text-xl font-bold mb-4">Libraries</h3>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -84,7 +122,7 @@ export const About =()=>{
 
                     </div>
 
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all">
+                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
                         <h3 className="text-xl font-bold mb-4">Soft Skills</h3>
                         <div className="flex flex-wrap gap-2">
                             {
@@ -94,10 +132,25 @@ export const About =()=>{
                                 ))
                             }
                         </div>
-
+ 
                     </div>
+ 
                 </div>
-
+                                       {/* === Circular continuous scrolling icons === */}
+          <div className="mt-12 relative overflow-hidden">
+           
+            <div className="flex animate-marquee gap-12">
+              {loopSkills.map((tech, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-blue-400 hover:text-blue-300 transition"
+                >
+                  <div className="text-5xl">{tech.icon}</div>
+                  <span className="text-sm mt-1 font-semibold">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-8">
@@ -116,7 +169,7 @@ export const About =()=>{
                         </ul>
                         </div>
 
-<div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+<div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
         <h3 className="text-xl font-bold mb-4">Work Experience</h3>
 <ul className="list-disc list-inside text-gray-300 space-y-2">
   <li>
@@ -126,7 +179,7 @@ Refactored a large PHP codebase into a modern MERN stack application, improving 
   </li>
 </ul>
     </div>
-                                <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+                                <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
         <h3 className="text-xl font-bold mb-4">Leadership Roles and Responsibilities</h3>
 <ul className="list-disc list-inside text-gray-300 space-y-2">
   <li>
@@ -142,7 +195,7 @@ Refactored a large PHP codebase into a modern MERN stack application, improving 
 
 
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-8">
-    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
         <h3 className="text-xl font-bold mb-4">Achievements and Awards</h3>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
             <li><strong>Gold Medalist</strong> (VNR VJIET) – Highest CGPA among all first-year students across branches</li>
@@ -158,7 +211,7 @@ Refactored a large PHP codebase into a modern MERN stack application, improving 
         </ul>
     </div>
 
-    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
         <h3 className="text-xl font-bold mb-4">Online Certifications</h3>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
             <li>Google AI Essentials – Coursera</li>
@@ -169,7 +222,7 @@ Refactored a large PHP codebase into a modern MERN stack application, improving 
         </ul>
     </div>
 
-    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
         <h3 className="text-xl font-bold mb-4">Extracurricular Activities</h3>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
             <li>Contributed to <strong>HacktoberFest 2024</strong>, <strong>IEEESoC 2025</strong>– Gained open-source experience</li>

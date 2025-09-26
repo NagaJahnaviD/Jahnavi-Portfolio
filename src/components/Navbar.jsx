@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   useEffect(() => {
@@ -6,47 +7,53 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white shadow-sm">
-      <div className="max-w-5xl mx-auto px-4">
+    <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,15,0.6)] backdrop-blur-xl border-b border-white/10 shadow-md">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="font-mono text-xl font-bold text-white">
-            Jahnavi<span className="text-blue-500">.tech</span>
+          {/* Logo */}
+          <a
+            href="#home"
+            className="font-mono text-xl font-bold text-white hover:text-blue-400 transition-colors duration-300"
+          >
+            Jahnavi
+            <span className="text-blue-500">.tech</span>
           </a>
 
+          {/* Hamburger / Close icon for mobile */}
           <div
-            className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
-            onClick={() => {
-              setMenuOpen((prev) => !prev);
-            }}
+            className="md:hidden w-8 h-8 relative cursor-pointer z-40 flex flex-col justify-center items-center"
+            onClick={() => setMenuOpen((prev) => !prev)}
           >
-            &#9776;
+            <span
+              className={`block h-0.5 w-6 bg-white transform transition duration-300 ${
+                menuOpen ? "rotate-45 translate-y-1.5" : "-translate-y-1"
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-white transition duration-300 ${
+                menuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-white transform transition duration-300 ${
+                menuOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1"
+              }`}
+            />
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-gray-300 hover:text-white transition-colors text-sm"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-gray-300 hover:text-white transition-colors text-sm"
-            >
-              About
-            </a>
-            <a
-              href="#projects"
-              className="text-gray-300 hover:text-white transition-colors text-sm"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-white transition-colors text-sm"
-            >
-              Contact
-            </a>
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center space-x-10">
+            {["home", "about", "projects", "contact"].map((section) => (
+              <a
+                key={section}
+                href={`#${section}`}
+                className="relative text-gray-300 hover:text-white transition-colors text-sm group"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {/* underline animation */}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
