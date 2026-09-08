@@ -1,241 +1,232 @@
-import {RevealOnScroll} from '../RevealOnScroll'
-import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaPython,
-  FaJava,
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaGitAlt,
-  FaGithub,
-} from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiMongodb,
-  SiMysql,
-  SiExpress,
-  SiPostman,
-  SiSocketdotio,
-} from "react-icons/si";
+import { FaTrophy, FaCode, FaAward, FaUsers, FaReact, FaNodeJs, FaPython, FaGitAlt, FaBookOpen } from "react-icons/fa";
+import { SiCplusplus, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { FiArrowUpRight, FiCheck } from "react-icons/fi";
+import { portfolioData } from "../../data/portfolioData";
+import { RevealOnScroll } from "../RevealOnScroll";
 
-export const About =()=>{
+export const About = () => {
+  const { personal } = portfolioData;
 
-    const frontendSkills=["ReactJS","JavaScript","TailwindCSS","Bootstrap","HTML"];
-    const backendSkills=["Node.Js","MongoDB","SQL","MySQL","Express.Js","REST API","Postman API","SocketIO"];
-    const tool=["Git","Github","Tableau","VS code","Eclipse","R Studio","Docker","MS Office","Clerk"];
-    const languages=["C","C++","JaxaScript","Python","Java","R "];
-    const libraries=["OpenCV","Numpy","MediaPipe","Pandas","Scikit"];
-    const softSkills=["Public Speaking","Leadership","Teamwork","Adaptability","Problem-Solving",];
-    
-
-  // All skills for marquee
-  const allSkills = [
-    { name: "ReactJS", icon: <FaReact /> },
-    { name: "JavaScript", icon: <FaJsSquare /> },
-    { name: "TailwindCSS", icon: <SiTailwindcss /> },
-    { name: "Bootstrap", icon: <FaCss3Alt /> },
-    { name: "HTML", icon: <FaHtml5 /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "MongoDB", icon: <SiMongodb /> },
-    { name: "SQL", icon: <SiMysql /> },
-    { name: "Express.js", icon: <SiExpress /> },
-    { name: "REST API", icon: <SiPostman /> },
-    { name: "SocketIO", icon: <SiSocketdotio /> },
-    { name: "Git", icon: <FaGitAlt /> },
-    { name: "Github", icon: <FaGithub /> },
+  const masterySkills = [
+    { name: "C++ & Data Structures", level: "95%", icon: <SiCplusplus className="text-[#00599C]" /> },
+    { name: "React.js & Frontend", level: "92%", icon: <FaReact className="text-[#61DAFB]" /> },
+    { name: "Node.js & Express", level: "88%", icon: <FaNodeJs className="text-[#68A063]" /> },
+    { name: "Python & Machine Learning", level: "90%", icon: <FaPython className="text-[#3776AB]" /> },
+    { name: "MongoDB & SQL", level: "85%", icon: <SiMongodb className="text-[#47A248]" /> },
+    { name: "Tailwind CSS & UI", level: "94%", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
+    { name: "Competitive Algorithms", level: "92%", icon: <FaCode className="text-[#818CF8]" /> },
+    { name: "Git & Production Workflows", level: "88%", icon: <FaGitAlt className="text-[#F05032]" /> },
   ];
-  const loopSkills = [...allSkills, ...allSkills];
-    return <section id="about" 
-    className="min-h-screen flex items-center justify-center py-20">
-        <RevealOnScroll>
-        <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">About Me</h2>
 
-            <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-                <p className="text-gray-300 mb-6">
-                I’m a third-year Computer Science student at VNR VJIET who loves all things AI, web development, and emerging tech. You’ll usually find me at a hackathon, building side projects, or diving into an internship challenge just to see what I can create next. I’m all about learning from smart people, experimenting with new ideas, and using technology to make a real impact. Always curious, always ready for the next big challenge!</p>
+  return (
+    <section id="about" className="py-28 relative">
+      <RevealOnScroll>
+        {/* Increased padding by 1.5x on left and right */}
+        <div className="max-w-7xl mx-auto px-10 sm:px-16 md:px-24 lg:px-32 xl:px-40">
+          
+          {/* Top Half: About Me + 4 Stat Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
+            
+            {/* Left: About Text */}
+            <div className="lg:col-span-6 flex flex-col items-start text-left">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-[4px] codecraft-badge text-xs font-semibold uppercase tracking-wider mb-4">
+                <span>ABOUT ME</span>
+              </div>
 
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
+                I'm passionate about engineering{" "}
+                <span className="text-gradient-theme">digital solutions</span> &{" "}
+                <span className="text-gradient-theme">algorithms</span>
+              </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {
-                                frontendSkills.map((tech)=>(
-                                    <span className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"> {tech}</span>
-                                ))
-                            }
-                        </div>
+              <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed mb-6">
+                Academic Gold Medalist (9.6 CGPA) at VNR VJIET. I bridge rigorous competitive problem-solving with hands-on enterprise engineering. From optimizing security pipelines and MERN platforms at Deutsche Börse to migrating active production systems at OpenPixel and leading Turing Hut's CP club across 400+ colleges, I focus on building software that is both technically sound and deeply impactful.
+              </p>
 
-                    </div>
-
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Backend</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {
-                                backendSkills.map((tech)=>(
-                                    <span className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"> {tech}</span>
-                                ))
-                            }
-                        </div>
-
-                    </div>
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Tools</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {
-                                tool.map((tech)=>(
-                                    <span className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"> {tech}</span>
-                                ))
-                            }
-                        </div>
-
-                    </div>
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Languages</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {
-                                languages.map((tech)=>(
-                                    <span className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"> {tech}</span>
-                                ))
-                            }
-                        </div>
-
-                    </div>
-
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Libraries</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {
-                                libraries.map((tech)=>(
-                                    <span className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"> {tech}</span>
-                                ))
-                            }
-                        </div>
-
-                    </div>
-
-                    <div className="rounded-xl p-6 hover:-translate-y-1 tansition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Soft Skills</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {
-                                softSkills.map((tech)=>(
-                                    <span className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"> {tech}</span>
-                                ))
-                            }
-                        </div>
- 
-                    </div>
- 
-                </div>
-                                       {/* === Circular continuous scrolling icons === */}
-          <div className="mt-12 relative overflow-hidden">
-           
-            <div className="flex animate-marquee gap-12">
-              {loopSkills.map((tech, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center text-blue-400 hover:text-blue-300 transition"
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center space-x-2 px-6 py-2.5 codecraft-btn-secondary text-xs font-semibold"
                 >
-                  <div className="text-5xl">{tech.icon}</div>
-                  <span className="text-sm mt-1 font-semibold">{tech.name}</span>
+                  <span>Connect With Me</span>
+                  <FiArrowUpRight />
+                </a>
+                <a
+                  href={personal.socials.medium}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center space-x-2 px-4 py-2.5 text-xs text-[#818CF8] hover:text-white transition-colors"
+                >
+                  <FaBookOpen className="mr-1" />
+                  <span>5-Part Medium Series ↗</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right: 4 Sleek Square Metric Cards (2x2) */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <div className="codecraft-card p-6 flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-[4px] bg-[#1E1B4B] border border-[#3730A3]/50 flex items-center justify-center text-[#818CF8] text-xl shrink-0">
+                  <FaCode />
+                </div>
+                <div>
+                  <div className="font-heading text-2xl sm:text-3xl font-bold text-white">
+                    4★
+                  </div>
+                  <div className="text-xs font-semibold text-[#CBD5E1] mt-0.5">
+                    CodeChef Specialist
+                  </div>
+                  <div className="text-[11px] text-[#64748B] mt-0.5">
+                    Contest problem solver
+                  </div>
+                </div>
+              </div>
+
+              <div className="codecraft-card p-6 flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-[4px] bg-[#1E1B4B] border border-[#3730A3]/50 flex items-center justify-center text-[#818CF8] text-xl shrink-0">
+                  <FaAward />
+                </div>
+                <div>
+                  <div className="font-heading text-2xl sm:text-3xl font-bold text-white">
+                    450+
+                  </div>
+                  <div className="text-xs font-semibold text-[#CBD5E1] mt-0.5">
+                    LeetCode Problems
+                  </div>
+                  <div className="text-[11px] text-[#64748B] mt-0.5">
+                    Advanced data structures
+                  </div>
+                </div>
+              </div>
+
+              <div className="codecraft-card p-6 flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-[4px] bg-[#1E1B4B] border border-[#3730A3]/50 flex items-center justify-center text-[#818CF8] text-xl shrink-0">
+                  <FaTrophy />
+                </div>
+                <div>
+                  <div className="font-heading text-2xl sm:text-3xl font-bold text-white">
+                    9.6 / 10
+                  </div>
+                  <div className="text-xs font-semibold text-[#CBD5E1] mt-0.5">
+                    Gold Medalist
+                  </div>
+                  <div className="text-[11px] text-[#64748B] mt-0.5">
+                    Branch Topper @ VNR VJIET
+                  </div>
+                </div>
+              </div>
+
+              <div className="codecraft-card p-6 flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-[4px] bg-[#1E1B4B] border border-[#3730A3]/50 flex items-center justify-center text-[#818CF8] text-xl shrink-0">
+                  <FaUsers />
+                </div>
+                <div>
+                  <div className="font-heading text-2xl sm:text-3xl font-bold text-white">
+                    2,500+
+                  </div>
+                  <div className="text-xs font-semibold text-[#CBD5E1] mt-0.5">
+                    CP Community Reach
+                  </div>
+                  <div className="text-[11px] text-[#64748B] mt-0.5">
+                    Turing Hut Lead (400+ colleges)
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Bottom Half: "MY SKILLS - Technologies I Master" */}
+          <div id="skills" className="pt-16 border-t border-[#1E293D]">
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-[4px] codecraft-badge text-xs font-semibold uppercase tracking-wider mb-3">
+                <span>MY SKILLS</span>
+              </div>
+              <h3 className="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                Technologies I{" "}
+                <span className="text-gradient-theme">Master</span>
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {masterySkills.map((skill, idx) => (
+                <div key={idx} className="codecraft-card p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2.5">
+                      <div className="text-xl">{skill.icon}</div>
+                      <span className="text-sm font-semibold text-white">{skill.name}</span>
+                    </div>
+                    <span className="text-xs font-mono text-[#818CF8] font-bold">{skill.level}</span>
+                  </div>
+                  <div className="w-full h-1.5 bg-[#172036] rounded-[2px] overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] rounded-[2px] transition-all duration-500"
+                      style={{ width: skill.level }}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Additional Categorized Skills List */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="codecraft-card p-6">
+                <h4 className="text-xs font-mono font-bold uppercase text-[#818CF8] tracking-wider mb-4">
+                  // Core AI & Machine Learning
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {["OpenCV", "MediaPipe", "TensorFlow", "Scikit-Learn", "VADER NLP", "Transformers / BERT", "RAG & Embeddings"].map((item, i) => (
+                    <span key={i} className="px-2.5 py-1 rounded-[4px] bg-[#131B2E] border border-[#1E293D] text-xs font-mono text-[#CBD5E1]">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="codecraft-card p-6">
+                <h4 className="text-xs font-mono font-bold uppercase text-[#818CF8] tracking-wider mb-4">
+                  // Systems & Security
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {["SIEM & Log Pipelines", "Docker", "Socket.IO", "Postman", "Linux / Bash", "cPanel Deployment", "Client Cryptography"].map((item, i) => (
+                    <span key={i} className="px-2.5 py-1 rounded-[4px] bg-[#131B2E] border border-[#1E293D] text-xs font-mono text-[#CBD5E1]">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="codecraft-card p-6">
+                <h4 className="text-xs font-mono font-bold uppercase text-[#818CF8] tracking-wider mb-4">
+                  // Certifications & Highlights
+                </h4>
+                <div className="space-y-2.5 text-xs text-[#94A3B8]">
+                  <div className="flex items-center space-x-2">
+                    <FiCheck className="text-[#818CF8] shrink-0" />
+                    <span>Google AI Essentials (Coursera)</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FiCheck className="text-[#818CF8] shrink-0" />
+                    <span>Postman API Student Expert</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FiCheck className="text-[#818CF8] shrink-0" />
+                    <span>Infosys Springboard AI & ML</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FiCheck className="text-[#818CF8] shrink-0" />
+                    <span>Microsoft Mentorship (3 Months)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-8">
-                    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
-                        <h3 className="text-xl font-bold mb-4">Education</h3>
-                        <ul className="list-disc list-inside text-gray-300 space-y-2">
-                            <li>
-                            <strong>B.Tech – Computer Science & Engineering</strong><br />
-                            VNR Vignana Jyothi Institute of Engineering & Technology <span className="opacity-70">(2023 – 2027)</span>
-                            </li>
-                            <li>
-                            <span className="font-medium">Key Coursework:</span> Data Structures, Web App Development, OOP with Java, 
-                            Design & Analysis of Algorithms, Computer Networks, Operating Systems, DBMS, 
-                            Software Engineering, Artificial Intelligence
-                            </li>
-                        </ul>
-                        </div>
-
-<div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
-        <h3 className="text-xl font-bold mb-4">Work Experience</h3>
-<ul className="list-disc list-inside text-gray-300 space-y-2">
-  <li>
-    <strong>OpenPixel – Web Developer Intern (Aug 2025 – Present)</strong><br />
-    
-Refactored a large PHP codebase into a modern MERN stack application, improving maintainability and enabling faster feature development. Collaborated closely with cross-functional teams—design, QA, and backend—to plan migrations, review code, and ensure smooth deployment. Gained hands-on experience with full-stack JavaScript, agile workflows, and effective technical communication across departments.
-  </li>
-</ul>
-    </div>
-                                <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
-        <h3 className="text-xl font-bold mb-4">Leadership Roles and Responsibilities</h3>
-<ul className="list-disc list-inside text-gray-300 space-y-2">
-  <li>
-    <strong>Lead – Turing Hut</strong><br />
-    Head of VNR VJIET’s competitive-programming club, responsible for strategy,
-    event planning, and mentorship. I design and run coding workshops and
-    campus-wide hackathons, guide the core team, and personally teach CP and
-    data-structures/algorithms to 80+ junior members. 
-  </li>
-</ul>
-    </div>
-
-
-
-                    <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-8">
-    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
-        <h3 className="text-xl font-bold mb-4">Achievements and Awards</h3>
-        <ul className="list-disc list-inside text-gray-300 space-y-2">
-            <li><strong>Gold Medalist</strong> (VNR VJIET) – Highest CGPA among all first-year students across branches</li>
-            <li><strong>Winner</strong> (Coding Contest) – DQ Codefest by DataQuesters, VNRVJIET</li>
-            <li><strong>National Semi-Finalist</strong> – Flipkart Grid 2k25</li>
-            <li><strong>Finalist</strong> (Top 10%) – CodeNox 2k24 by Turing Hut</li>
-            <li><strong>2nd Place</strong> – Solution Sprint-2024 Hackathon by ISTE, VNR VJIET</li>
-            <li><strong>1st Place</strong> – Oratory Olympics 2024 by Toastmasters, VNR VJIET</li>
-            <li>Solved <strong>300+ DSA problems</strong> on LeetCode</li>
-            <li><strong>13th Rank</strong> – Top100Coders (1500+ participants)</li>
-            <li><strong>HackerRank:</strong> 5⭐ in Problem Solving, 4⭐ in C</li>
-            <li><strong>3rd Rank</strong> – Internal coding assessment by Smart Interviews (600+ students)</li>
-        </ul>
-    </div>
-
-    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
-        <h3 className="text-xl font-bold mb-4">Online Certifications</h3>
-        <ul className="list-disc list-inside text-gray-300 space-y-2">
-            <li>Google AI Essentials – Coursera</li>
-            <li>Postman API Fundamentals Student Expert</li>
-            <li>Programming Fundamentals using Python – Infosys Springboard</li>
-            <li>Microsoft Cyber Suraksha Course</li>
-            <li>Tableau for Data Analysis and Data Science – Udemy</li>
-        </ul>
-    </div>
-
-    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all bg-white/5">
-        <h3 className="text-xl font-bold mb-4">Extracurricular Activities</h3>
-        <ul className="list-disc list-inside text-gray-300 space-y-2">
-            <li>Contributed to <strong>HacktoberFest 2024</strong>, <strong>IEEESoC 2025</strong>– Gained open-source experience</li>
-            <li><strong>Volunteer</strong> – ISTE, VNR VJIET (selected from 100+ candidates)</li>
-            <li><strong>Volunteer</strong> – CSI, VNR VJIET (selected from 250+ candidates)</li>
-            <li><strong>Member</strong> – Stentorian (literary club) selected from 300+ applicants</li>
-        </ul>
-    </div>
-</div>
-
-            </div>
         </div>
-        </RevealOnScroll>
+      </RevealOnScroll>
     </section>
-
-}
+  );
+};
